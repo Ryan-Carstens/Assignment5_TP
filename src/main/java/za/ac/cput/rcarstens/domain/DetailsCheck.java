@@ -5,8 +5,7 @@ import java.io.Serializable;
 /**
  * Created by sanXion on 2016/04/03.
  */
-public class DetailsCheck implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class DetailsCheck {
     private String id;
     private boolean response;
 
@@ -51,24 +50,5 @@ public class DetailsCheck implements Serializable {
         public DetailsCheck build() {
             return new DetailsCheck(this);
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof DetailsCheck)) return false;
-
-        DetailsCheck detailsCheck = (DetailsCheck) o;
-
-        if (getId() != null ? !getId().equals(detailsCheck.getId()) : detailsCheck.getId() != null) return false;
-        return !(getResponse() != null ? !getResponse().equals(detailsCheck.getResponse()) : detailsCheck.getResponse() != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + (getResponse() != null ? getResponse().hashCode() : 0);
-        return result;
     }
 }
